@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUM Buddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">TB</div>
+          <div>
+            <div class="brand-title">TUM Buddy</div>
+            <div class="brand-subtitle">Academic Assistant</div>
+          </div>
+        </div>
+
+        <nav class="nav-section">
+          <p class="nav-label">Main Menu</p>
+          <a class="nav-item active" href="#dashboard">Dashboard</a>
+          <a class="nav-item" href="#event-search">Event Scout</a>
+          <a class="nav-item external" href="https://campus.tum.de/tumonline/" target="_blank" rel="noreferrer">
+            TUMonline
+          </a>
+          <a class="nav-item external" href="https://www.moodle.tum.de/" target="_blank" rel="noreferrer">
+            TUM Moodle
+          </a>
+        </nav>
+
+        <nav class="nav-section">
+          <p class="nav-label">Autonomous Agents</p>
+          <a class="nav-item" href="#weekly-scout">
+            Weekly Scout
+          </a>
+          <a class="nav-item" href="#research-radar">
+            Research Radar
+          </a>
+          <a class="nav-item" href="#career-pulse">
+            Career Pulse
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <span class="status-dot"></span>
+          <span>Systems Online</span>
+        </div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar" id="dashboard">
+          <div>
+            <h1>Academic Chief of Staff</h1>
+            <p>Welcome back. Your student event finder is ready to scout the next opportunity.</p>
+          </div>
+
+          <div class="profile-block">
+            <div class="profile-text">
+              <strong>Ilyes Hassayoun</strong>
+              <span>M.Sc. Informatics</span>
+            </div>
+            <div class="avatar">IH</div>
+          </div>
+        </header>
+
+        <main class="content">
+          <section class="hero-grid">
+            <article class="metric-card">
+              <p class="metric-label">Academic Load</p>
+              <div class="metric-row">
+                <strong>12</strong>
+                <span>ECTS</span>
+              </div>
+              <div class="metric-chip positive">+ 2 ECTS this week</div>
+            </article>
+
+            <article class="metric-card">
+              <p class="metric-label">Event Match Score</p>
+              <div class="metric-row">
+                <strong>8</strong>
+                <span>Targets</span>
+              </div>
+              <div class="metric-chip warning">High relevance shortlist</div>
+            </article>
+
+            <article class="deadline-card">
+              <p class="metric-label inverse">Next Deadline</p>
+              <div class="deadline-main">2 Days</div>
+              <p class="deadline-copy">IN2028 Moodle Homework</p>
+              <a class="deadline-button" href="https://www.moodle.tum.de/" target="_blank" rel="noreferrer">
+                View Details
+              </a>
+            </article>
+          </section>
+
+          <section class="dashboard-grid">
+            <article class="panel activity-panel">
+              <div class="panel-header">
+                <h2>Recent Activity</h2>
+                <p>Live signals from your academic dashboard.</p>
+              </div>
+
+              <div class="activity-list">
+                <div class="activity-item">
+                  <div class="activity-icon success">✓</div>
+                  <div class="activity-copy">
+                    <strong>Homework Submitted</strong>
+                    <span>IN0006: Introduction to Software Engineering</span>
+                  </div>
+                  <time>2h ago</time>
+                </div>
+
+                <div class="activity-item">
+                  <div class="activity-icon alert">!</div>
+                  <div class="activity-copy">
+                    <strong>New Weak Point Detected</strong>
+                    <span>Functional Programming: Recursion</span>
+                  </div>
+                  <time>5h ago</time>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel quick-links-panel">
+              <div class="panel-header">
+                <h2>Quick Links</h2>
+                <p>Open the official TUM services directly.</p>
+              </div>
+
+              <div class="quick-links">
+                <a
+                  class="quick-link-card"
+                  href="https://campus.tum.de/tumonline/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div class="quick-link-icon blue">TU</div>
+                  <strong>TUMonline</strong>
+                  <span>Campus portal and course admin</span>
+                </a>
+
+                <a
+                  class="quick-link-card"
+                  href="https://www.moodle.tum.de/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div class="quick-link-icon orange">MO</div>
+                  <strong>Moodle</strong>
+                  <span>Assignments, classes, and materials</span>
+                </a>
+              </div>
+            </article>
+          </section>
+
+          <section class="scout-grid">
+            <article class="panel scout-panel" id="weekly-scout">
+              <div class="panel-header">
+                <h2>Weekly Scout</h2>
+                <p>Broad discovery for hackathons, student meetups, and high-energy AI events.</p>
+              </div>
+              <div class="scout-tags">
+                <span>Hackathons</span>
+                <span>Networking</span>
+                <span>AI Events</span>
+              </div>
+              <p class="scout-copy">
+                Best when you want quick weekly inspiration and events that feel student-friendly.
+              </p>
+              <button
+                class="scout-action"
+                type="button"
+                data-prefill="hackathons, networking, AI events"
+              >
+                Use Weekly Scout
+              </button>
+            </article>
+
+            <article class="panel scout-panel" id="research-radar">
+              <div class="panel-header">
+                <h2>Research Radar</h2>
+                <p>Academic and innovation-focused events around emerging technical fields.</p>
+              </div>
+              <div class="scout-tags">
+                <span>Machine Learning</span>
+                <span>Data Science</span>
+                <span>Robotics</span>
+              </div>
+              <p class="scout-copy">
+                Use this when you want conferences, labs, workshops, and serious technical talks.
+              </p>
+              <button
+                class="scout-action"
+                type="button"
+                data-prefill="machine learning, data science, robotics"
+              >
+                Use Research Radar
+              </button>
+            </article>
+
+            <article class="panel scout-panel" id="career-pulse">
+              <div class="panel-header">
+                <h2>Career Pulse</h2>
+                <p>Industry-facing events that help with internships, career visibility, and practical skills.</p>
+              </div>
+              <div class="scout-tags">
+                <span>Cybersecurity</span>
+                <span>Software Engineering</span>
+                <span>Cloud</span>
+              </div>
+              <p class="scout-copy">
+                Ideal for employer-facing events, recruiting touchpoints, and applied engineering communities.
+              </p>
+              <button
+                class="scout-action"
+                type="button"
+                data-prefill="cybersecurity, software engineering, cloud"
+              >
+                Use Career Pulse
+              </button>
+            </article>
+          </section>
+
+          <section class="panel search-panel" id="event-search">
+            <div class="panel-header split">
+              <div>
+                <h2>Tech Events Scout</h2>
+                <p>Ask your Dify agent for upcoming hackathons, meetups, and tech events.</p>
+              </div>
+              <div class="status-pill" id="status-text">Ready when you are.</div>
+            </div>
+
+            <div class="search-layout">
+              <form id="events-form" class="search-form">
+                <label>
+                  Interests
+                  <textarea
+                    id="interests"
+                    name="interests"
+                    rows="4"
+                    placeholder="AI, cybersecurity, hackathons, startups, cloud computing"
+                    required
+                  ></textarea>
+                </label>
+
+                <div class="field-grid">
+                  <label>
+                    Time Range
+                    <input
+                      id="dateRange"
+                      name="dateRange"
+                      type="text"
+                      placeholder="May to July 2026"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Preferred Location
+                    <input
+                      id="city"
+                      name="city"
+                      type="text"
+                      placeholder="Munich or online"
+                    />
+                  </label>
+                </div>
+
+                <div class="field-grid">
+                  <label>
+                    Max Events
+                    <input id="maxEvents" name="maxEvents" type="number" min="3" max="20" value="8" />
+                  </label>
+
+                  <label>
+                    Conversation ID
+                    <input
+                      id="conversationId"
+                      name="conversationId"
+                      type="text"
+                      placeholder="Optional follow-up conversation"
+                    />
+                  </label>
+                </div>
+
+                <label>
+                  Extra Notes
+                  <textarea
+                    id="notes"
+                    name="notes"
+                    rows="4"
+                    placeholder="I am a computer science student, budget is low, I prefer free events, and I can travel on weekends."
+                  ></textarea>
+                </label>
+
+                <button type="submit" id="submit-button">Find Events</button>
+              </form>
+
+              <div id="result-card" class="result-card empty">
+                <p class="placeholder">
+                  Your Dify agent recommendations will appear here, including event details and links.
+                </p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
