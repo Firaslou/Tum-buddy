@@ -1,52 +1,152 @@
-# Campus Tech Events Finder
+# TUM Buddy
 
-A lightweight website that sends student event preferences to your Dify app and shows the answer in a polished interface.
+**TUM Buddy** is an AI-powered academic assistant for TUM students.  
+It brings together multiple student-focused agents in one interface to help with:
 
-## What it does
+- discovering relevant events and hackathons
+- getting course and subject guidance
+- checking transport disruptions around Munich
+- finding student jobs and HiWi opportunities
+- analyzing a CV to improve career matching
 
-- collects interests, time range, city, and extra context
-- sends that data to a backend route
-- keeps your Dify API key on the server instead of exposing it in the browser
-- renders the Dify response as readable Markdown
+The app combines a lightweight frontend with a Node.js backend, Dify-powered AI routes, and a Python-based CV extraction tool.
 
-## Setup
+---
 
-1. Copy `.env.example` to `.env`
-2. Fill in your Dify values:
-   - `DIFY_API_KEY`
-   - `DIFY_BASE_URL`
-   - `DIFY_USER_ID`
-   - `DIFY_APP_MODE`
-3. Start the app:
+## 🚀 Live Demo
 
-```bash
-npm start
-```
+👉 https://tum-buddy-393109800536.europe-west1.run.app/
 
-4. Open `http://localhost:3000`
+---
 
-## Dify notes
+## 🧠 What TUM Buddy does
 
-- Use `DIFY_APP_MODE=chat` if your Dify app is a chat or agent app using `/chat-messages`.
-- Use `DIFY_APP_MODE=workflow` if your app is a workflow using `/workflows/run`.
-- Chat and Agent apps are sent with `response_mode=streaming` internally, then the server combines the streamed chunks before returning them to the browser.
-- The backend currently sends a natural language `query` plus structured `inputs`.
-- For your current Dify agent, the structured inputs are `interests` and `location`.
-- The website's time range, max events, and extra notes are folded into the natural-language query so you can keep a simple Dify variable schema.
+TUM Buddy is built as a **multi-agent student companion** rather than a single chatbot.
 
-## Customizing the agent behavior
+### 1. Event Scout
+Finds upcoming events based on interests, city, time range, and context.
 
-Edit `buildPrompt()` in `server.mjs` if you want the prompt to enforce a stricter format such as:
+- Uses Dify AI backend
+- Supports chat & workflow modes
+- Maintains conversational context
 
-- table output
-- only free events
-- only online events
-- only events in a specific country
-- scholarship or student-discount friendly events
+---
 
-## File overview
+### 2. Subject Guide
+Provides tailored academic guidance for specific subjects.
 
-- `server.mjs`: static file server plus Dify proxy route
-- `public/index.html`: page structure
-- `public/styles.css`: visual design
-- `public/app.js`: form submission and response rendering
+Useful for:
+- study strategies
+- exam preparation
+- course direction
+
+---
+
+### 3. Transport Detector
+Delivers AI-generated transport insights for Munich.
+
+- Monitors disruptions
+- Auto-refreshes data
+- Uses dedicated AI agent
+
+---
+
+### 4. Career Scout
+Matches students with relevant opportunities.
+
+Sources include:
+- TUM HiWi listings
+- TUM chair job pages
+- external student job platforms
+
+Includes ranking logic based on:
+- skills
+- interests
+- preferences
+
+---
+
+### 5. CV Analyzer
+Extracts structured data from uploaded CVs.
+
+Detects:
+- degree & field
+- technical skills
+- interests
+- languages
+- job preferences
+
+---
+
+## 🤖 AI Features
+
+### Dify-powered assistants
+- Event Scout
+- Transport Detector
+- Subject Guide  
+
+Each supports:
+- `chat` mode  
+- `workflow` mode  
+
+---
+
+### Prompt-based orchestration
+Structured prompts are built from:
+- interests
+- location
+- notes
+- degree
+- subject
+
+---
+
+### Streaming support
+Handles streamed AI responses and combines them for UI rendering.
+
+---
+
+### Multi-agent design
+Instead of one chatbot, TUM Buddy uses specialized agents:
+- events
+- academics
+- transport
+- careers
+
+---
+
+### CV intelligence pipeline
+1. Upload CV  
+2. Extract text  
+3. Detect sections  
+4. Infer profile  
+5. Return structured data  
+
+---
+
+## 🏗️ Architecture
+
+### Frontend
+- Static web app (HTML, CSS, JS)
+- Dashboard interface
+- Form-based interaction
+- Dynamic result rendering
+
+---
+
+### Backend
+Node.js server that:
+- serves frontend
+- handles API routes
+- integrates Dify AI
+- protects API keys
+- processes CVs
+- ranks job opportunities
+
+---
+
+### Python CV Extraction
+Uses:
+
+```txt
+pypdf
