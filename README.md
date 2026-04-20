@@ -22,6 +22,6 @@ AI-powered multi-agent system for students including:
 
 ---
 
-🔗 Repository: https://github.com/Ilyeshass/tum-buddy
+🔗 Repository for full code: https://github.com/Ilyeshass/tum-buddy
 🔗 Live Demo: https://tum-buddy-393109800536.europe-west1.run.app/
 
